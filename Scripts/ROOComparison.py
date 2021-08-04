@@ -197,8 +197,8 @@ def get_rrm_dataset(iMETHOD, iSRC, iTGT, iVARin, Order, subPath=-1):
 
     elif iMETHOD == 1:
         assert(subPath in [0, 1])
-        GMLS_SUBPATHS = ['RegionallyRefined/GMLS /',
-                         'RegionallyRefined/GMLS-CAAS/']
+        GMLS_SUBPATHS = ['RegionallyRefined/GMLS',
+                         'RegionallyRefined/GMLS-CAAS']
         assert(Order in GMLS_SUPPORTED_ORDERS)
         GMLS_SUBPATH = "{0}/degree-{1}/".format(
             GMLS_SUBPATHS[subPath], Order-1)
@@ -413,24 +413,30 @@ def plot_dataset(
                     fig.write_image(sfilename)
 
 
-# Uniform mesh plots for the paper
-plot_dataset(ivar=4, metricnames=['GC'], resolutions=[(0, 4), (4, 0), (4, 4)],
-             gridtypes=[0], orders=[4, 4, 4, 2], showPlot=False)
-plot_dataset(ivar=2, metricnames=['GMaxE'], resolutions=[(0, 4), (4, 0), (4, 4)],
-             gridtypes=[1], orders=[4, 4, 4, 2], showPlot=False)
-plot_dataset(ivar=3, metricnames=['GMinE'], resolutions=[(0, 4), (4, 0), (4, 4)],
-             gridtypes=[0], orders=[4, 4, 4, 2], showPlot=False)
-plot_dataset(ivar=4, metricnames=['LMaxL2'], resolutions=[(0, 4), (4, 0), (4, 4)],
-             gridtypes=[0], orders=[4, 4, 4, 2], showPlot=False)
-plot_dataset(ivar=3, metricnames=['LMinL2'], resolutions=[(0, 4), (4, 0), (4, 4)],
-             gridtypes=[2], orders=[4, 4, 4, 2], showPlot=False)
+def main():
 
-# RRM plots for the paper
-plot_dataset(ivar=3, metricnames=['GC'], resolutions=[(0, 2), (2, 0), (2, 2)], isRRM=True,
-             orders=[4, 4, 4, 2], showPlot=False)
-plot_dataset(ivar=2, metricnames=['GMaxE'], resolutions=[(0, 2), (2, 0), (2, 2)], isRRM=True,
-             orders=[4, 4, 4, 2], showPlot=False)
-plot_dataset(ivar=3, metricnames=['LMaxL2'], resolutions=[(2, 2)], isRRM=True,
-             gridtypes=[0], orders=[4, 4, 4, 2], showPlot=False)
-plot_dataset(ivar=3, metricnames=['LMinL2'], resolutions=[(2, 2)], isRRM=True,
-             gridtypes=[0], orders=[4, 4, 4, 2], showPlot=False)
+    # Uniform mesh plots for the paper
+    plot_dataset(ivar=4, metricnames=['GC'], resolutions=[(0, 4), (4, 0), (4, 4)],
+                 gridtypes=[0], orders=[4, 4, 4, 2], showPlot=False)
+    plot_dataset(ivar=2, metricnames=['GMaxE'], resolutions=[(0, 4), (4, 0), (4, 4)],
+                 gridtypes=[1], orders=[4, 4, 4, 2], showPlot=False)
+    plot_dataset(ivar=3, metricnames=['GMinE'], resolutions=[(0, 4), (4, 0), (4, 4)],
+                 gridtypes=[0], orders=[4, 4, 4, 2], showPlot=False)
+    plot_dataset(ivar=4, metricnames=['LMaxL2'], resolutions=[(0, 4), (4, 0), (4, 4)],
+                 gridtypes=[0], orders=[4, 4, 4, 2], showPlot=False)
+    plot_dataset(ivar=3, metricnames=['LMinL2'], resolutions=[(0, 4), (4, 0), (4, 4)],
+                 gridtypes=[2], orders=[4, 4, 4, 2], showPlot=False)
+
+    # RRM plots for the paper
+    plot_dataset(ivar=3, metricnames=['GC'], resolutions=[(0, 2), (2, 0), (2, 2)], isRRM=True,
+                 orders=[4, 4, 4, 2], showPlot=False)
+    plot_dataset(ivar=2, metricnames=['GMaxE'], resolutions=[(0, 2), (2, 0), (2, 2)], isRRM=True,
+                 orders=[4, 4, 4, 2], showPlot=False)
+    plot_dataset(ivar=3, metricnames=['LMaxL2'], resolutions=[(2, 2)], isRRM=True,
+                 gridtypes=[0], orders=[4, 4, 4, 2], showPlot=False)
+    plot_dataset(ivar=3, metricnames=['LMinL2'], resolutions=[(2, 2)], isRRM=True,
+                 gridtypes=[0], orders=[4, 4, 4, 2], showPlot=False)
+
+
+if __name__ == "__main__":
+    main()
