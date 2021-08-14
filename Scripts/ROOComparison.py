@@ -81,7 +81,7 @@ def get_dataset(iMETHOD, GridType, iSRC, iTGT, iVARin, Order, subPath=-1):
     if iMETHOD == 0:
         assert(Order in TR_SUPPORTED_ORDERS)
         TR_SUBPATH = "UniformlyRefined/TempestRemap/{0}/degree-{1}/".format(
-            GRIDTYPES[GridType], Order-1)
+            GRIDTYPES[GridType], Order - 1)
         if GridType == 0:
             filename = MetricsFilePath + TR_SUBPATH + "metrics_CS{0}_ICOD{1}_O{2}_{3}".format(
                 CSRES[iSRC], ICODRES[iTGT], str(Order), DATAVARIABLES[iVARin])
@@ -97,7 +97,7 @@ def get_dataset(iMETHOD, GridType, iSRC, iTGT, iVARin, Order, subPath=-1):
                          'UniformlyRefined/GMLS-CAAS']
         assert(Order in GMLS_SUPPORTED_ORDERS)
         GMLS_SUBPATH = "{0}/{1}/degree-{2}/".format(
-            GMLS_SUBPATHS[subPath], GRIDTYPES[GridType], Order-1)
+            GMLS_SUBPATHS[subPath], GRIDTYPES[GridType], Order - 1)
         if GridType == 0:
             filename = MetricsFilePath + GMLS_SUBPATH + "metrics_CS{0}_ICOD{1}_O{2}_{3}".format(
                 CSRES[iSRC], ICODRES[iTGT], str(Order), DATAVARIABLES[iVARin])
@@ -123,7 +123,7 @@ def get_dataset(iMETHOD, GridType, iSRC, iTGT, iVARin, Order, subPath=-1):
     elif iMETHOD == 3:
         ESMF_METHODS = ['conserve', 'conserve2nd']
         assert(Order in ESMF_SUPPORTED_ORDERS)
-        ESMF_METHOD = ESMF_METHODS[Order-1]
+        ESMF_METHOD = ESMF_METHODS[Order - 1]
         ESMF_SUBPATH = "UniformlyRefined/ESMF/{0}/{1}/".format(
             GRIDTYPES[GridType], ESMF_METHOD)
         if GridType == 0:
@@ -143,7 +143,7 @@ def get_dataset(iMETHOD, GridType, iSRC, iTGT, iVARin, Order, subPath=-1):
     compression_context = False
     data = None
     if not compression_context:
-        if (os.path.exists(filename+'.bz2')):
+        if (os.path.exists(filename + '.bz2')):
             filename += '.bz2'
             data = pd.read_csv(filename, compression='infer')
         elif (os.path.exists(filename)):
@@ -191,9 +191,9 @@ def get_rrm_dataset(iMETHOD, iSRC, iTGT, iVARin, Order, subPath=-1):
     if iMETHOD == 0:
         assert(Order in TR_SUPPORTED_ORDERS)
         TR_SUBPATH = "RegionallyRefined/TempestRemap/degree-{0}/".format(
-            Order-1)
+            Order - 1)
         filename = MetricsFilePath + TR_SUBPATH + "metrics_cs{0}_icodr{1}_O{2}_{3}".format(
-            CSRES[1+iSRC], iTGT+3, str(Order), DATAVARIABLES[iVARin])
+            CSRES[1 + iSRC], iTGT + 3, str(Order), DATAVARIABLES[iVARin])
 
     elif iMETHOD == 1:
         assert(subPath in [0, 1])
@@ -201,9 +201,9 @@ def get_rrm_dataset(iMETHOD, iSRC, iTGT, iVARin, Order, subPath=-1):
                          'RegionallyRefined/GMLS-CAAS']
         assert(Order in GMLS_SUPPORTED_ORDERS)
         GMLS_SUBPATH = "{0}/degree-{1}/".format(
-            GMLS_SUBPATHS[subPath], Order-1)
+            GMLS_SUBPATHS[subPath], Order - 1)
         filename = MetricsFilePath + GMLS_SUBPATH + "metrics_CS{0}_ICOD{1}_O{2}_{3}".format(
-            CSRES[1+iSRC], ICODRES[1+iTGT], str(Order), DATAVARIABLES[iVARin])
+            CSRES[1 + iSRC], ICODRES[1 + iTGT], str(Order), DATAVARIABLES[iVARin])
 
     elif iMETHOD == 2:
         assert(Order in WLSENOR_SUPPORTED_ORDERS)
@@ -214,10 +214,10 @@ def get_rrm_dataset(iMETHOD, iSRC, iTGT, iVARin, Order, subPath=-1):
     elif iMETHOD == 3:
         ESMF_METHODS = ['conserve', 'conserve2nd']
         assert(Order in ESMF_SUPPORTED_ORDERS)
-        ESMF_METHOD = ESMF_METHODS[Order-1]
+        ESMF_METHOD = ESMF_METHODS[Order - 1]
         ESMF_SUBPATH = "RegionallyRefined/ESMF/{0}/".format(ESMF_METHOD)
         filename = MetricsFilePath + ESMF_SUBPATH + "metrics_cs{0}_icodr{1}_{2}_{3}".format(
-            CSRES[1+iSRC], iTGT+3, ESMF_METHOD, DATAVARIABLES[iVARin])
+            CSRES[1 + iSRC], iTGT + 3, ESMF_METHOD, DATAVARIABLES[iVARin])
 
     else:
         return None, ""
@@ -225,7 +225,7 @@ def get_rrm_dataset(iMETHOD, iSRC, iTGT, iVARin, Order, subPath=-1):
     filename += '.csv'
     compression_context = False
     if not compression_context:
-        if (os.path.exists(filename+'.bz2')):
+        if (os.path.exists(filename + '.bz2')):
             filename += '.bz2'
             data = pd.read_csv(filename, compression='infer')
         elif (os.path.exists(filename)):
@@ -301,40 +301,40 @@ def plot_dataset(
             vargridtext = "{0} - {1}".format(
                 DATAVARIABLES[ivar], GRIDTYPES[gridtype])
 
-            titledata = {'GC':     r"$\texttt{Global conservation: %s}$" % (vargridtext),
-                         'GL1':    r"$L_1 \texttt{ Error Metric: %s}$" % (vargridtext),
-                         'GL2':    r"$L_2 \texttt{ Error Metric: %s}$" % (vargridtext),
-                         'GLinf':  r"$L_\infty \texttt{ Error Metric: %s}$" % (vargridtext),
-                         'GMaxE':  r"$L_{\infty} \texttt{ of Global Maxima: %s}$" % (vargridtext),
-                         'GMinE':  r"$L_{\infty} \texttt{ of Global Minima: %s}$" % (vargridtext),
+            titledata = {'GC': r"$\texttt{Global conservation: %s}$" % (vargridtext),
+                         'GL1': r"$L_1 \texttt{ Error Metric: %s}$" % (vargridtext),
+                         'GL2': r"$L_2 \texttt{ Error Metric: %s}$" % (vargridtext),
+                         'GLinf': r"$L_\infty \texttt{ Error Metric: %s}$" % (vargridtext),
+                         'GMaxE': r"$L_{\infty} \texttt{ of Global Maxima: %s}$" % (vargridtext),
+                         'GMinE': r"$L_{\infty} \texttt{ of Global Minima: %s}$" % (vargridtext),
                          'LMaxL1': r"$L_1 \texttt{ Local Maxima: %s}$" % (vargridtext),
                          'LMaxL2': r"$L_2 \texttt{ Local Maxima: %s}$" % (vargridtext),
                          'LMinL1': r"$L_1 \texttt{ Local Minima: %s}$" % (vargridtext),
                          'LMinL2': r"$L_2 \texttt{ Local Minima: %s}$" % (vargridtext),
                          'LMaxLm': r"$L_\infty \texttt{ Local Maxima: %s}$" % (vargridtext),
                          'LMinLm': r"$L_\infty \texttt{ Local Minima: %s}$" % (vargridtext),
-                         'H12T':   r"$H_{0.5,T} \texttt{ Gradient Error Metric: %s}$" % (vargridtext),
-                         'H1T':    r"$H_{1,T} \texttt{ Gradient Error Metric: %s}$" % (vargridtext),
-                         'H12S':   r"$H_{0.5,S} \texttt{ Gradient Error Metric: %s}$" % (vargridtext),
-                         'H1S':    r"$H_{1,S} \texttt{ Gradient Error Metric: %s}$" % (vargridtext),
+                         'H12T': r"$H_{0.5,T} \texttt{ Gradient Error Metric: %s}$" % (vargridtext),
+                         'H1T': r"$H_{1,T} \texttt{ Gradient Error Metric: %s}$" % (vargridtext),
+                         'H12S': r"$H_{0.5,S} \texttt{ Gradient Error Metric: %s}$" % (vargridtext),
+                         'H1S': r"$H_{1,S} \texttt{ Gradient Error Metric: %s}$" % (vargridtext),
                          }
 
-            yaxisdata = {'GC':     r'$\texttt{Global Field Integral}$',
-                         'GL1':    r'$L_1 \texttt{ Global Error}$',
-                         'GL2':    r'$L_2 \texttt{ Global Error}$',
-                         'GLinf':  r'$L_{\infty} \texttt{ Global Error}$',
-                         'GMaxE':  r'$L_{\infty} \texttt{ of Global Field Maxima}$',
-                         'GMinE':  r'$L_{\infty} \texttt{ of Global Field Minima}$',
+            yaxisdata = {'GC': r'$\texttt{Global Field Integral}$',
+                         'GL1': r'$L_1 \texttt{ Global Error}$',
+                         'GL2': r'$L_2 \texttt{ Global Error}$',
+                         'GLinf': r'$L_{\infty} \texttt{ Global Error}$',
+                         'GMaxE': r'$L_{\infty} \texttt{ of Global Field Maxima}$',
+                         'GMinE': r'$L_{\infty} \texttt{ of Global Field Minima}$',
                          'LMaxL1': r'$L_1 \texttt{ of Local Field Maxima}$',
                          'LMaxL2': r'$L_2 \texttt{ of Local Field Maxima}$',
                          'LMaxLm': r'$L_{\infty} \texttt{ of Local Field Maxima}$',
                          'LMinL1': r'$L_1 \texttt{ of Local Field Minima}$',
                          'LMinL2': r'$L_2 \texttt{ of Local Field Minima}$',
                          'LMinLm': r'$L_{\infty} \texttt{ of Local Field Minima}$',
-                         'H12T':   r'$H_{0.5,T} \texttt{ Gradient Error on Target}$',
-                         'H1T':    r'$H_{1,T} \texttt{ Gradient Error on Target}$',
-                         'H12S':   r'$H_{0.5,S} \texttt{ Gradient Error on Source}$',
-                         'H1S':    r'$H_{1,S} \texttt{ Gradient Error on Source}$'}
+                         'H12T': r'$H_{0.5,T} \texttt{ Gradient Error on Target}$',
+                         'H1T': r'$H_{1,T} \texttt{ Gradient Error on Target}$',
+                         'H12S': r'$H_{0.5,S} \texttt{ Gradient Error on Source}$',
+                         'H1S': r'$H_{1,S} \texttt{ Gradient Error on Source}$'}
 
             for metricvar in metricnames:
                 fig = go.Figure()
@@ -365,8 +365,11 @@ def plot_dataset(
                 print('Computing plots for ', titledata[metricvar])
 
                 def transformvar(metricvec):
-                    # if metricvar in ['GC', 'GL1', 'GL2', 'GLinf', 'H12T', 'H1T', 'H12S', 'H1S', 'LMaxL1', 'LMaxL2', 'LML1', 'LMinL2']:
-                    if metricvar in ['GC', 'GL1', 'GL2', 'GLinf', 'H12T', 'H1T', 'H12S', 'H1S']:
+                    # if metricvar in ['GC', 'GL1', 'GL2', 'GLinf', 'H12T',
+                    # 'H1T', 'H12S', 'H1S', 'LMaxL1', 'LMaxL2', 'LML1',
+                    # 'LMinL2']:
+                    if metricvar in ['GC', 'GL1', 'GL2',
+                                     'GLinf', 'H12T', 'H1T', 'H12S', 'H1S']:
                         return np.log10(np.abs(metricvec))
                     elif metricvar in ['LMaxL1', 'LMaxL2', 'LMaxLm', 'LMinL1', 'LMinL2', 'LMinLm']:
                         return (metricvec)
@@ -377,7 +380,7 @@ def plot_dataset(
                     go.Scatter(
                         x=REMAPITERATIONS, y=transformvar(dfTR[metricvar]),
                         mode='lines+markers', name="<b>{0}(p={1})</b>".format(METHODS[0],
-                                                                              orders[0]-1)))
+                                                                              orders[0] - 1)))
                 fig.add_trace(
                     go.Scatter(
                         x=REMAPITERATIONS, y=transformvar(
@@ -389,7 +392,10 @@ def plot_dataset(
                         x=REMAPITERATIONS, y=transformvar(dfWLSENO[metricvar]),
                         mode='lines+markers', name="<b>{0}(p={1})</b>".format(METHODS[2],
                                                                               orders[2])))
-                # fig.add_trace( go.Scatter(x=REMAPITERATIONS, y=transformvar(dfWLSENOC[metricvar]), mode='lines+markers', name="<b>{0}-C({1})</b>".format(METHODS[2],orders[2]))) #, row=1, col=1)
+                # fig.add_trace( go.Scatter(x=REMAPITERATIONS,
+                # y=transformvar(dfWLSENOC[metricvar]), mode='lines+markers',
+                # name="<b>{0}-C({1})</b>".format(METHODS[2],orders[2]))) #,
+                # row=1, col=1)
                 fig.add_trace(
                     go.Scatter(
                         x=REMAPITERATIONS, y=transformvar(dfESMF[metricvar]),
