@@ -31,8 +31,22 @@ The dataset repository contains three groups of artifacts: the original test cas
 plot_dataset(ivar=4, metricnames=['GC'], resolutions=[(0, 4), (4, 0), (4, 4)],
                  gridtypes=[0], orders=[4, 4, 4, 2], showPlot=False)
 ```
-![Global Conservation Metric for TotalPrecipWater field on CS(4)-MPAS(4) mesh](https://github.com/CANGA/Remapping-Intercomparison-Datasets/raw/main/Scripts/images/GC_TotalPrecipWater_CS-MPAS_0-4.png)
 
+<div align="center">
+    
+![Global Conservation Metric for TotalPrecipWater field on CS(0)-MPAS(4) mesh](Scripts/images/GC_TotalPrecipWater_CS-MPAS_0-4.png)
+
+**Figure (a): Global Conservation Metric for TotalPrecipWater field on CS(0)-MPAS(4) mesh**
+
+![Global Conservation Metric for TotalPrecipWater field on CS(4)-MPAS(0) mesh](Scripts/images/GC_TotalPrecipWater_CS-MPAS_4-0.png)
+
+**Figure (b): Global Conservation Metric for TotalPrecipWater field on CS(4)-MPAS(0) mesh**
+
+![Global Conservation Metric for TotalPrecipWater field on CS(4)-MPAS(4) mesh](Scripts/images/GC_TotalPrecipWater_CS-MPAS_4-4.png)
+
+**Figure (c): Global Conservation Metric for TotalPrecipWater field on CS(4)-MPAS(4) mesh**
+    
+</div>
 
 ## Licensing Terms
 
