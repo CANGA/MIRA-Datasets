@@ -1,6 +1,6 @@
-# Coupling Approaches for Next-Generation Architectures (CANGA) -- Remapping Offline-Online (ROO) Intercomparison Package Dataset Repository
+# MIRASets - Datasets from Metrics for Intercomparison of Remapping Algorithms
 
-The [CANGA-ROO](https://github.com/CANGA/Remapping-Intercomparison) project provides the Python drivers for the intercomparison study to enable the computation of metrics for different remapping algorithms of interest in ESM.
+The [MIRA](https://github.com/CANGA/Remapping-Intercomparison) project provides the Python drivers for the intercomparison study to enable the computation of metrics for different remapping algorithms of interest in ESM.
 
 ![Remapping Intercomparison Workflow](https://github.com/CANGA/Remapping-Intercomparison/raw/master/figures/implementation-metrics-intercomparison.png)
 
