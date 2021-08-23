@@ -1,8 +1,8 @@
-# Coupling Approaches for Next-Generation Architectures (CANGA) -- Remapping Offline-Online (ROO) Intercomparison Package Dataset Repository
+# MIRA-Datasets - Datasets from Metrics for Intercomparison of Remapping Algorithms
 
-The [CANGA-ROO](https://github.com/CANGA/Remapping-Intercomparison) project provides the Python drivers for the intercomparison study to enable the computation of metrics for different remapping algorithms of interest in ESM.
+The [MIRA](https://github.com/CANGA/MIRA) project provides the Python drivers for the intercomparison study to enable the computation of metrics for different remapping algorithms of interest in ESM.
 
-![Remapping Intercomparison Workflow](https://github.com/CANGA/Remapping-Intercomparison/raw/master/figures/implementation-metrics-intercomparison.png)
+![Remapping Intercomparison Workflow](https://github.com/CANGA/MIRA/raw/master/figures/implementation-metrics-intercomparison.png)
 
 ## Repository Organization
 
@@ -47,6 +47,12 @@ plot_dataset(ivar=4, metricnames=['GC'], resolutions=[(0, 4), (4, 0), (4, 4)],
 **Figure (c): Global Conservation Metric for TotalPrecipWater field on CS(4)-MPAS(4) mesh**
     
 </div>
+
+## Contributors
+- Vijay Mahadevan (Mathematics and Computational Science Division, Argonne National Laboratory, Lemont, IL 60439, USA)
+- Jorge Guerra (OU/CIMMS, NOAA National Severe Storms Laboratory, Norman, OK, USA)
+- Paul Kuberry (Center for Computing Research, Sandia National Laboratories, Mailstop 1320, P.O. Box 5800, Albuquerque, NM 87125, USA)
+- Xiangmin Jiao (Department of Applied Mathematics \& Statistics, Stony Brook University, Stony Brook, NY 11704, USA)
 
 ## Licensing Terms
 
