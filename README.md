@@ -1,8 +1,8 @@
-# MIRASets - Datasets from Metrics for Intercomparison of Remapping Algorithms
+# MIRA-Datasets - Datasets from Metrics for Intercomparison of Remapping Algorithms
 
-The [MIRA](https://github.com/CANGA/Remapping-Intercomparison) project provides the Python drivers for the intercomparison study to enable the computation of metrics for different remapping algorithms of interest in ESM.
+The [MIRA](https://github.com/CANGA/MIRA) project provides the Python drivers for the intercomparison study to enable the computation of metrics for different remapping algorithms of interest in ESM.
 
-![Remapping Intercomparison Workflow](https://github.com/CANGA/Remapping-Intercomparison/raw/master/figures/implementation-metrics-intercomparison.png)
+![Remapping Intercomparison Workflow](https://github.com/CANGA/MIRA/raw/master/figures/implementation-metrics-intercomparison.png)
 
 ## Repository Organization
 
