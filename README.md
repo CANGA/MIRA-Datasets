@@ -48,13 +48,15 @@ plot_dataset(ivar=4, metricnames=['GC'], resolutions=[(0, 4), (4, 0), (4, 4)],
     
 </div>
 
+## License
+
+The MIRA remapping intercomparison code and the associated datasets provided in this repository are distributed under an open-source licensing agreement. Please refer to the [![License](https://img.shields.io/badge/License-Open--Source--ANL-blue.svg)](LICENSE) for further details on the agreement and copyright information.
+
 ## Contributors
+
 - Vijay Mahadevan (Mathematics and Computational Science Division, Argonne National Laboratory, Lemont, IL 60439, USA)
 - Jorge Guerra (OU/CIMMS, NOAA National Severe Storms Laboratory, Norman, OK, USA)
 - Paul Kuberry (Center for Computing Research, Sandia National Laboratories, Mailstop 1320, P.O. Box 5800, Albuquerque, NM 87125, USA)
 - Xiangmin Jiao (Department of Applied Mathematics \& Statistics, Stony Brook University, Stony Brook, NY 11704, USA)
 
-## Licensing Terms
-
-The remapping intercomparison code is distributed under a 3-clause BSD licensing agreement. [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
