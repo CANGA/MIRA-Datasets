@@ -59,4 +59,35 @@ The MIRA remapping intercomparison code and the associated datasets provided in 
 - Paul Kuberry (Center for Computing Research, Sandia National Laboratories, Mailstop 1320, P.O. Box 5800, Albuquerque, NM 87125, USA)
 - Xiangmin Jiao (Department of Applied Mathematics \& Statistics, Stony Brook University, Stony Brook, NY 11704, USA)
 
+## Citing MIRA and MIRA-Datasets
 
+If you use MIRA drivers in your research work or use the meshes, output datasets provided in the current datasets repository to publish a paper, please cite the following references:
+
+```
+@software{mira_software,
+  author       = {Jorge Guerra and 
+                  Vijay Mahadevan and 
+                  Paul Kuberry and 
+                  Xiangmin Jiao and 
+                  Yipeng Li},
+  title        = {MIRA: Metrics for Intercomparison of Remapping Algorithms},
+  month        = sep, 
+  year         = 2021,
+  doi          = {10.5281/zenodo.5518037},
+  url          = {https://github.com/CANGA/MIRA}
+}
+
+@misc{mira_datasets,
+  author       = {Vijay Mahadevan and
+                  Jorge Guerra and
+                  Paul Kuberry and
+                  Xiangmin Jiao},
+  title        = {MIRA-Datasets: Datasets from Metrics for Intercomparison of Remapping Algorithms},
+  month        = sep, 
+  year         = 2021,
+  doi          = {10.5281/zenodo.5518065},
+  url          = {https://github.com/CANGA/MIRA-Datasets}
+}
+
+```
+The above reference is applicable to every version of the MIRA software.
